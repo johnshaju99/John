@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Noorz 💙</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1c2d;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .screen {
+      display: none;
+      padding: 20px;
+    }
+    .screen.active {
+      display: block;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+    .hint {
+      margin-top: 20px;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body onclick="nextScreen()">
+
+  <!-- Screen 1 -->
+  <div class="screen active" id="s1">
+    <h1>Happy Valentine’s, my Noorz 💙</h1>
+    <div class="hint">(Tap anywhere)</div>
+  </div>
+
+  <!-- Screen 2 -->
+  <div class="screen" id="s2">
+    <h1>Just for you 💙</h1>
+    <img src="img1.jpg" alt="Memory 1"><br>
+    <img src="img2.jpg" alt="Memory 2"><br>
+    <img src="img3.jpg" alt="Memory 3"><br>
+    <img src="img4.jpg" alt="Memory 4">
+    <div class="hint">(Tap anywhere)</div>
+  </div>
+
+  <!-- Screen 3 -->
+  <div class="screen" id="s3">
+    <h1>Love you a lot ❤️</h1>
+  </div>
+
+  <script>
+    let current = 1;
+    function nextScreen() {
+      document.getElementById("s" + current).classList.remove("active");
+      current++;
+      if (current > 3) current = 3;
+      document.getElementById("s" + current).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
